@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::middleware(['auth', 'verified'])->prefix('dashboard')->group(function () {
     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/choose_template', [DashboardController::class, 'choose_template'])->name('choose-template');
+    Route::get('/proposal-pkm', [DashboardController::class, 'proposal_pkm'])->name('proposal-pkm');
     Route::post('/proposal-pkm', [DashboardController::class, 'proposal_pkm_save'])->name('proposal-pkm-save');
     Route::get('/proposal-pkm-pdf/{id}', [DashboardController::class, 'propsal_pkm_pdf'])->name('proposal-pkm-pdf');
 
