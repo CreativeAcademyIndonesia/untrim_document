@@ -20,7 +20,7 @@ class DashboardController extends Controller
         return view('dashboard.choose-template');
     }
 
-    public function propsal_pkm(Request $request){
+    public function proposal_pkm (Request $request){
         return view('dashboard.proposal-pkm');
     }
 
