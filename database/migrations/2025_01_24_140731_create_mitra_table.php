@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('mitra', function (Blueprint $table) {
             $table->id();
-            $table->string('nama_mitra');
+            $table->text('nama_mitra');
             $table->text('alamat');
-            $table->string('peran');
+            $table->text('peran');
             $table->foreignId('proposal_pkm_id')->constrained('proposal_pkm')->onDelete('cascade');
             $table->timestamps();
         });

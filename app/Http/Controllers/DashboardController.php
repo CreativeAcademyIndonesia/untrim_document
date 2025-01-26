@@ -27,32 +27,31 @@ class DashboardController extends Controller
     public function proposal_pkm_save(Request $request)
     {
         try {
-            // Validasi data input untuk proposal
             $request->validate([
-                'judul' => 'required|string|max:255',
-                'bidang_fokus' => 'required|string|max:255',
-                'skema' => 'required|string|max:255',
-                'target_sdgs' => 'required|string|max:255',
+                'judul' => 'required|string',
+                'bidang_fokus' => 'required|string',
+                'skema' => 'required|string',
+                'target_sdgs' => 'required|string',
                 'pendahuluan' => 'required|string',
                 'permasalahan' => 'required|string',
                 'metode' => 'required|string',
                 'gambaran_ipteks' => 'required|string',
             ]);
-
+            
             // Validasi data pengusul (bisa lebih dari satu)
             $request->validate([
-                'nama_pengusul.*' => 'required|string|max:255',
-                'nidn_nuptk.*' => 'required|string|max:50',
-                'program_studi.*' => 'required|string|max:255',
+                'nama_pengusul.*' => 'required|string',
+                'nidn_nuptk.*' => 'required|string',
+                'program_studi.*' => 'required|string',
             ]);
-
+            
             // Validasi data mitra (bisa lebih dari satu)
             $request->validate([
-                'nama_mitra.*' => 'required|string|max:255',
+                'nama_mitra.*' => 'required|string',
                 'alamat.*' => 'required|string',
-                'peran.*' => 'required|string|max:255',
+                'peran.*' => 'required|string',
             ]);
-
+            
             // Mulai transaksi untuk memastikan data terkait disimpan dengan baik
             \DB::beginTransaction();
 

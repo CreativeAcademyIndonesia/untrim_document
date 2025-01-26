@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('proposal_pkm', function (Blueprint $table) {
             $table->id();
-            $table->string('judul');
-            $table->string('bidang_fokus');
-            $table->string('skema');
-            $table->string('target_sdgs');
+            $table->text('judul');
+            $table->text('bidang_fokus');
+            $table->text('skema');
+            $table->text('target_sdgs');
             $table->text('pendahuluan');
             $table->text('permasalahan');
             $table->text('metode');
